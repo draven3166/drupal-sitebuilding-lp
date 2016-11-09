@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Drupal Lab PC + Dev + 20 minutos</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/serif.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,272 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<img class="image-ini" src="images/logo-drupal-day.png">
+
+				</section>
+				<section>
+					<h3><strong>Ronald Nina Calla</strong> </h3>
+					<img src="images/si-ronald.jpg" width="250" heigth="250">
+					<!--h5>Software Engineer at SMARTICA</h5-->
+					<h5>Software Engineer &#38; IT Media Trainer at DW AKADEMIE</h5>
+					<small><a href="http://twitter.com/draven3166"><strong>TWT:</strong> @draven3166</a></small><br>
+					<small><strong>Gmail:</strong> draven3166</small><br>
+					<small><strong>Hotmail &#38; Skype:</strong> draven3166</small>
+				</section>
+				<section>
+					<section>
+					  <h2>Drupal Lab PC + Dev + 20 minutos</h2>
+					  <img src="images/drupal-modulos.png">
+					</section>
+					<section>
+					    <h2>Flexibilidad</h2>
+					    <p class="parrafo-p">
+					    	Gracias a los módulos de drupal: Panels, Views y CTools, la creación de nuevas funciones para el cliente se realiza a golpe de ratón, sin la necesidad de tocar el código.
+					    	Como por ejemplo:
+						</p> 
+						<ul>
+							<li>Crear tipos de contenidos</li>
+							<li>Crear paginas personalizadas</li>
+							<li>Crear paginas administrativas</li>
+							<li>Crear vistas personalizadas (consultas a BD)</li>
+							<li>Generar feeds</li>
+							<li>etc...</li>
+						</ul>
+					</section>
+					<section>	
+						<h1>Pero...</h1>
+						<p class="parrafo-p">
+							Muchas veces nos encontramos con la necesidad de hacer:
+						</p>
+							<ul>
+								<li>Cálculos u operaciones con datos almacenados</li>
+								<li>Consumir servicios externos (Webservices)</li>
+								<li>Crear formularios personalizados</li>
+								<li>Interactuar con modulos contribuidos y tipos de contenido</li>
+								<li>Crear tareas que se ejecuten de forma sincronizada con el Cron de drupal</li>
+								<li>etc, etc, etc...</li>
+							</ul>  
+					</section>
+					<section>
+						<h2>¿Que hacemos?</h2>
+						<div class="contenedor-cust">
+							<div class="content-izq">
+								<img class="image-custom" src="images/captain-drupal.png">
+							</div>
+							<div class="content-der">
+								<h3>Capitán Drupal al rescate!</h3>
+							</div>							
+						</div>						
+					</section>
+					<section>
+						<h1>Comencemos!</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>¿Que son los módulos?</h1>
+						<p class="parrafo-p">
+							Son los elementos básicos que forman la base de Drupal y son los mecanismos para la <strong>ampliación de la funcionalidad proporcionada</strong> por la versión de la plataforma de Drupal, también conocido como el núcleo de Drupal.
+						</p>
+					</section>
+					<section>
+						<h2>Modularidad en drupal</h2>
+						<div class="contenedor-cust">
+							<div class="content-izq">
+								<img class="image-custom" src="images/lego-casa.jpg">
+							</div>
+							<div class="content-der">
+								<img class="image-custom" src="images/lego.jpg">
+							</div>							
+						</div>
+					</section>
+					<section>
+						<h2>Estructura general de un módulo</h2>
+						<p class="parrafo-p">
+							<strong>Nombre de un módulo</strong>
+
+							Comenzarmos haciendo una distinción formal que ahorrará dificultades: Todo módulo tiene dos nombres, que generalmente pueden ser iguales, pero que deben ser considerados como diferentes: Un nombre amigable y un nombre técnico.
+						</p>
+					</section>
+					<section>
+						<p class="parrafo-p">
+							<strong>El nombre amigable</strong>
+
+							Es un nombre con sentido social y cuyo propósito es presentar al módulo ante la comunidad para que sea identificado y entendido por sus usuarios. Ej: "Mi primer módulo"
+						</p>
+						<p class="parrafo-p">
+							<strong>El nombre técnico</strong>
+
+							Esta dirigido a la máquina, es humanamente legible pero se orienta a ser entendido por "el motor de Drupal" y debe ser único en cada sitio en que sea instalado.
+							Debe ser escrito usando únicamente letras minúsculas (sin eñes,tildes), números y guión bajo (raya al piso). Ej: "mi_primer_modulo"
+
+						</p>
+					</section>
+					<section>
+						<h2>Contenido del módulo</h2>
+						<p class="parrafo-p">
+							<strong>Contenido de un módulo</strong>
+
+							Todo módulo debe tener como mínimo dos archivos (*.info y *.module) alojados en un mismo directorio y, los tres (directorio y archivos) deben tener en común el nombre técnico del módulo. ejemplo: Supongamos que acabamos de escribir e instalar un módulo. La estructura de archivos resultante se parecerá a la siguiente:
+						</p>
+							<ul>
+								<li>/misitio/sites/all/modules/mis_modulos/</li>
+								<li>mi_primer_modulo/</li>
+								<ul>
+									<li>mi_primer_modulo.info</li>
+									<li>mi_primer_modulo.module</li>
+								</ul>
+
+							</ul>
+					</section>
+					<section>
+						<p class="parrafo-p">
+							Todo lo visto equivale a <strong>instalar el módulo</strong>. No obstante, <strong>no equivale a activarlo</strong>. Drupal explora el árbol de directorios y registra automáticamente los módulos existentes en el mismo; y presume, que si están allí, es porque se quiso instalarlos: no se copia accidentalmente un directorio de módulo a un directorio modules de un sitio Drupal. 
+						</p>
+					</section>
+					<section>
+						<h2>Entendiendo un poco...</h2>
+						<p class="parrafo-p">
+							<strong>Contenido del archivo de declaración  ".info"</strong><br>
+							El archivo de declaración .info, es un archivo de texto plano debe contener como mínimo los siguientes parámetros: nombre amigable, descripción y versión de drupal a la que está dirigido el módulo. No se necesita el nombre técnico pues este es ofrecido por el nombre del archivo.
+						</p>
+					</section>
+					<section>
+						<h3>Se presentan así:</h3>
+						<p class="parrafo-p">
+
+							<strong>name</strong><br>
+							Nombre amigable. Se recomienda que sólo su primera letra sea mayúscula, y en caso de requerir tildes debe usar entities (entidades) html y ser escrito entre comillas. Si no usa entidades no requiere de las comillas.
+							<br><strong>description</strong><br>
+							Descripción breve del propósito del módulo (para qué sirve, qué hace.)
+							<br><strong>core</strong><br>
+							Familia de versiones de Drupal a la que está dirigido puede ser 6.x, 7.x, 8.x, etc. Establece restricciones de compatibilidad.
+						</p>
+					</section>
+					<section>
+						<h3>El ejemplo...</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+name = Ejemplo mi primer modulo 
+description = Funciones de mi primer modulo 
+core = 7.x 
+package = DrupalDay - ejemplos
+						</code></pre>
+					</section>
+					<section>
+						<h3>El archivo de programa principal de un módulo</h3>
+						<p class="parrafo-p">
+							El archivo "nombre_tecnico_del_modulo.module" es un archivo de programa escrito en lenguaje php típico, que ofrece las funciones y objetos necesarios para que el módulo sea operativo.
+							Acá usaremos lo hook's, funciones con soluciones a medida
+							
+						</p>
+					</section>
+					<section>
+						<h3>Tiene tres características fundamentales:</h3>
+						<ul>
+							<li>
+								Siempre debe usar la inicial: "< ?  "
+							</li>
+							<li>
+								Nunca usa la marca terminadora  "?>" típica 
+							</li>
+							<li>
+								Implementa mediante puntos de enganche hook_ las funciones necesarias para que Drupal pueda activar y ejecutar sus servicios
+								Puede incluir funciones y objetos adicionales para ser llamados y empleados mediante código php desde otros módulos o desde páginas, cuando el módulo php ha sido habilitado para ser usado como formato de entrada al escribir las páginas del sitio.
+							</li>
+						</ul>						
+					</section>
+					<section>
+						<h3>El ejemplo...</h3>
+						<p class="parrafo-p">
+						<pre><code class="hljs" data-trim contenteditable>
+< ? php
+/*
+* aca usaremos los hook's
+* empezamos siempre primero con < ? php jamas se debe cerrar  ? >
+*/
+						</code></pre>
+						</p>
+					</section>
+					<section>
+						<h3>El archivo de instalación de un módulo</h3>
+						<p class="parrafo-p">
+							
+
+							Al igual que el archivo de programa principal, se trata de un archivo de programa php sin cierre de etiqueta en la línea terminadora Su función es realizar tareas del tipo sólo una vez, necesarias para la correcta operación del módulo, presentar tareas de actualización, definir la estructura de base de datos requerida, crear e iniciar las tablas necesarias y eventualmente ofrecer mecanismos de desinstalación. 
+						</p>
+					</section>
+				</section>
+				<section>
+					<h1>Veamos un ejemplo</h1>
+				</section>
+				<section>
+					<img src="images/drupal8.png" width="500" heigth="500">
+				</section>
+				<section>
+					<h2>¿Qué Cambio?</h2>
+					<p class="parrafo-p">
+						Pasamos a un enfoque mucho más <strong>orientado a objetos</strong> utilizando el framework Symfony tenemos una serie de ventajas evidentes. Si tienes experiencia con la programación orientada a objetos, o si ha incursionado tanto en <strong>Symfony y Zend</strong>, entonces aprendiste los conceptos de <strong>MVC y la programación orientada a objetos.</strong>  Ahora más que nunca que va a ser importante para los Drupaleros aprender acerca de estas cosas con anticipación a fin de estar listo.
+					</p>
+				</section>
+				<section>
+					<h2>Adaptándose al cambio vamos!</h2>
+					<p class="parrafo-p">
+						<strong>ESTRUCTURA DE ARCHIVOS</strong><br>
+						Lo primera que usted notará en <a href="https://ftp.drupal.org/files/projects/drupal-8.1.9.tar.gz">Drupal8</a>, son los cambios en la estructura de archivos. <br>Todo es mucho más sencillo. <br> Cada una de las carpetas en el directorio raíz, núcleo, módulos, perfiles, sitios y temas, casas de sus respectivos componentes. <br>
+						Con eso se dice, comenzará colocando la carpeta del módulo dentro del directorio de módulos de raíz; y ya no como antes "sites/all/modules"
+					</p>
+				</section>
+				<section>
+					<h3>Actuemos!</h3>
+					<p class="parrafo-p">
+						Entonces a nivel del core en la carpeta modules nos creamos nuestra carpeta con el nombre del modulo a crear <br>
+						Nuestro caso llamaremos de ejemplo a nuestro modulo "hola"
+						<br>
+					</p>
+						<h3><strong>modules/hello</strong></h3>
+					
+				</section>
+				<section>
+					<h3>Recuerdan el archivo plano de información ".info" ???</h3>
+					<h4>Para Drupal 8</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+name: hello
+type: module
+description: 'Esta es una demostración de creacion de un modulo para Drupal 8.'
+package: Custom
+version: 8.x-1.0
+core: 8.x
+dependencies:
+- node
+- block
+hidden: false
+					</code></pre>
+				</section>
+				<section>
+					<h2>Nota</h2>
+					<p class="parrafo-p">
+						Un par de cosas a tener en cuenta sería la sintaxis, por supuesto, pero también el uso de la propiedad oculta. Oculto le permitirá mostrar u ocultar el módulo en la página principal del módulo para publicar anuncios
+					</p>
+				</section>
+				<section>
+					<h1>Ahora veamos los cambios</h1>
+				</section>
+				<section>
+					<h2>Crear el CONTROLLER</h2>
+					<p class="parrafo-p">
+						Los controladores son un componente fundamental de la arquitectura MVC (es decir: Modelo-Vista- Controlador ).
+						<br>
+						<strong>Los modelos</strong>  representan los objetos o piezas de datos que fluyen a través de una aplicación, algo así como entidades. <br>
+						<strong>Vistas </strong> son las representaciones visuales de los modelos (no como el módulo de Drupal). <br>
+						<strong>Controladores</strong>  hacen la mayor parte del trabajo pesado y manejar la mayoría de la lógica en una aplicación típica MVC. Acá de maneja también la parte de la aplicación con la que el usuario va a interactuar.
+					</p>
+				</section>
+				<section>
+					<h3>facebook: DrupalBolivia</h3>
+					<h3>GDO: </h3>
+				</section>
+
 			</div>
 		</div>
 
